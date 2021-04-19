@@ -1,6 +1,6 @@
 
 body,section{
-    cursor: url("img/cursor.png"),pointer;
+    cursor: url("../img/cursor.png"),pointer;
 }
 
 .menu-desplegable{
