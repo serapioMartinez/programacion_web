@@ -1,0 +1,28 @@
+
+section{
+    margin: auto;
+    text-align: center;
+}
+.redes-sociales a{
+    list-style: none;
+    background-image: url(img/social-nets.png);
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    margin: auto;
+}
+.redes-sociales a:nth-child(1){
+    background-position: 300px;
+}
+.redes-sociales a:nth-child(2){
+    background-position: 100px;
+}
+.redes-sociales a:nth-child(3){
+    background-position: 0px;
+}
+.redes-sociales a:nth-child(4){
+    background-position: 200px;
+}
+.redes-sociales a:hover{
+    transform: rotate(5deg);
+}

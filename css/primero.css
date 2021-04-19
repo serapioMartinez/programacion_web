@@ -1,0 +1,47 @@
+
+body,section{
+    cursor: url("img/cursor.png"),pointer;
+}
+
+.menu-desplegable{
+    background-color: rgba(0,0,0,0.8);
+    width: 15%;
+    height: 100%;
+    display: none;
+    vertical-align: top;
+}
+.informacion{
+    display: inline-block;
+    width: 80%;
+}
+nav{
+    background-color: rgba(0,0,0,0.8);
+}
+nav *{  
+    color: white;
+    display: inline-block;
+    margin: auto 1rem;
+}
+.menu-boton{
+    cursor: pointer;
+    background-color: black;
+    border: 0px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+}
+section ul{
+    text-align: center;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+section ul li{   
+    margin: 5px auto;
+    list-style: none;
+    border-bottom: white 1px solid;
+    
+}
+section ul li a{
+    text-decoration: none;
+    color: white;
+}

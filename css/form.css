@@ -1,0 +1,19 @@
+
+.formal-form{
+    float: left;
+    text-align: justify;
+    margin: auto 1rem;
+    box-shadow: rgb(59, 57, 57) 3px 0px 5px;
+    background-color: rgb(231, 219, 201);
+}
+
+.label-item-form,.item-input-form{
+    display: block;
+    width: 90%;
+    margin: auto 10px;    
+}
+.submit-button{
+    float: right;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}

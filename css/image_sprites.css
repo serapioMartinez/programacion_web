@@ -1,0 +1,40 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#barra{
+    width: auto;
+    height: 40px;
+    background-image: url(img/CU01037D_5.png);
+    margin-bottom: 30px;
+}
+li{
+    list-style-type: none;
+}
+#itemsMenu li{
+    height: 45px;
+    line-height: 2em;
+    margin-top: 5px;
+}
+#itemsMenu li div{
+    height: 40px;
+    width: 40px;
+    margin-right: 15px;
+    background-image: url(img/CU01037D_6.png);
+    float: left;
+}
+#itemsMenu a{
+    text-decoration: none;
+    color: burlywood;
+}
+#itemsMenu li:nth-child(1) div{
+    background-position: 0px;
+}
+#itemsMenu li:nth-child(2) div{
+    background-position: 40px;
+}
+#itemsMenu li:nth-child(3) div{
+    background-position: 80px;
+}
+#itemsMenu li:nth-child(4) div{
+    background-position: 120px;
+}

@@ -1,0 +1,24 @@
+section{
+    margin: auto;
+}
+section div{
+    border-radius: 10px;
+    text-align: center;
+    padding: 5px 0px;
+    margin: 10px;
+    background: rgba(124, 218, 152, 0.5);
+}
+div li{
+    list-style: none;
+    padding-bottom: 8px;
+    margin-left: 10px;
+}
+div ul{
+    background: rgb(196, 202, 198);
+    display: none;
+    text-align: left;
+}
+div a{
+    text-decoration: none;
+
+}

@@ -1,0 +1,82 @@
+body{
+    background-color: rgb(221, 198, 164);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+}
+*{
+    border-radius: 5px;
+}
+h1,h2,h3,h4,h5,h6,p{
+    text-shadow: ivory 2px 2px 5px;
+    margin: 5px;
+}
+
+.navegacion{
+    width: 100%;
+}
+.navegacion ul{
+    background: rgba(200, 161, 161,0.6);
+    border-radius: 5px;
+    padding-right: 10px;
+    text-align: right;
+}
+.navegacion img{
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    width: 50px;
+}
+.navegacion li{
+    display: inline-block;
+    list-style: none;
+    background: rgba(167, 161, 161,0.3);
+    border-radius: 10px;
+    font-style: italic;
+    font-size: 20px;
+    padding: 8px;
+}
+.navegacion li:hover{
+    background: rgba(80, 179, 218, 0.6);
+}
+.navegacion a{
+    color: black;
+    text-decoration: none;
+    
+}
+
+.divisor{
+    width: 100%;
+    background-color: rgba(168, 109, 21, 0.932);
+    margin: 5px;
+}
+
+.titulo{
+    position: relative;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.subtitulo{
+    position: relative;
+    text-align: right;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.subtitulo-center{
+    position: relative;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.explicacion{
+    text-align: justify;
+}
+.explicacion img{
+    display: block;
+    margin: 20px auto;
+}
