@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego Del Numero</title>
+    <style>
+        html{
+            font-family: sans-serif;
+        }
+        body{
+            width: 50%;
+            max-width: 800px;
+            min-width: 480px;
+            margin: 0 auto;
+        }
+        .ultimo_resultado{
+            color:white;
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Juego adivina el número</h1>
+    <p>Hemos seleccionado un número aleatorio entre 1 y 100. Vamos a decirte si tu numero es mas álto o mas bájo.</p>
+     <div class="form">
+         <!--
+         <label for="guessField"> Enter a guess:</label>
+         <input type="text" id="guessField" class="guessField">
+         <input type="submit" value="Submit guess" class="guessSubmit">
+         -->
+         <label for="campoRespuesta"> Ingresa un numero:</label>
+         <input type="text" id="campoRespuesta" class="campoRespuesta">
+         <input type="submit" value="Probar" class="botonRespuesta">
+         
+     </div>
+     <div class="resultParas">
+         <p class="intentos"></p>
+         <p class="ultimo_resultado"></p>
+         <p class="lowOrHi"></p>
+     </div>
+    
+    <script>
+        let randomNumber = Math.floor(Math.random()*100)+1;
+
+        const intentos = document.querySelector('.intentos');
+        const ultimo_resultado = document.querySelector('.ultimo_resultado');
+        const lowOrHi = document.querySelector('.lowOrHi');
+
+        const botonRespuesta =  document.querySelector('.botonRespuesta');
+        const campoRespuesta = document.querySelector('.campoRespuesta');
+
+        let contadorIntentos = 1;
+        campoRespuesta.focus();
+        let botonReiniciar;
+        botonRespuesta.addEventListener('click',revisarRespuesta);
+        function revisarRespuesta(){
+            let intento_actual = Number(campoRespuesta.value);
+            if(contadorIntentos === 1){
+                intentos.textContent = 'Intentos anteriores: ';
+            }
+            intentos.textContent+= intento_actual + ' ';
+            if(intento_actual === randomNumber){
+                ultimo_resultado.textContent = '¡Feicidades! ¡Lo adivinaste!';
+                ultimo_resultado.style.backgroundColor = 'green';
+                lowOrHi.textContent='';
+                finDelJuego();
+            }else{
+                ultimo_resultado.textContent = '¡Incorrecto!';
+                ultimo_resultado.style.backgroundColor='red';
+                if(intento_actual<randomNumber){
+                    lowOrHi.textContent='¡El número es muy bajo!';
+                }else if(intento_actual>randomNumber){
+                    lowOrHi.textContent = '¡El número es muy grande!';
+                }
+            }
+            contadorIntentos++;
+            campoRespuesta.value='';
+            campoRespuesta.focus();
+        }
+        function finDelJuego(){
+            campoRespuesta.disable=true;
+            botonRespuesta.disable=true;
+            botonReiniciar = document.createElement('button');
+            botonReiniciar.textContent = 'Iniciar nuevo Juego';
+            document.body.append(botonReiniciar);
+            botonReiniciar.addEventListener('click',reiniciarJuego);
+        }
+        function reiniciarJuego(){
+            contadorIntentos = 1;
+
+            const resetParas = document.querySelectorAll('.resultParas p');
+            for(let i =0;i<resetParas.length;i++){
+                resetParas[i].textContent = '';
+            }
+            botonReiniciar.parentNode.removeChild(botonReiniciar);
+
+            campoRespuesta.disable = false;
+            botonRespuesta.disable = false;
+            campoRespuesta.value = '';
+            campoRespuesta.focus();
+
+            ultimo_resultado.style.backgroundColor='white';
+
+            randomNumber = Math.floor(Math.random()*100)+1;
+        }
+        
+    </script>
+</body>
+</html>

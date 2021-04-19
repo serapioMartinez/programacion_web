@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <h1>
+            Obtencion del rfc
+        </h1>
+        <p>Tu RFC es: <span class="target"></span></p>
+    </section>
+    <script>
+        var rfc="";
+        var rfc_document=document.querySelector('.target');
+        alert("Ingrese los datos que se le soliciten");
+        a_paterno=prompt("Apellido paterno").toUpperCase();
+        a_materno=prompt("Apellido materno");
+        nombre=prompt("Nombre");
+        alert("Ahora ingresara su fecha de nacimiento en formato numerico -> 2000 - 11 - 15");
+        ano=prompt("Año de nacimiento");
+        mes=prompt("Mes de nacimiento");
+        dia=prompt("Dia de nacimiento");
+        rfc+=a_paterno.charAt(0);
+        rfc+=obtenerPrimerVocal();
+        rfc+=a_materno.charAt(0);
+        rfc+=nombre.charAt(0);
+        rfc+=ano.substring(2,4);
+        if(parseInt(mes)<10){mes='0'+mes;}
+        if(parseInt(dia)<10){dia='0'+dia;}
+        rfc+=mes;
+        rfc+=dia;
+        rfc_document.textContent=rfc.toUpperCase();
+        function obtenerPrimerVocal(){
+            var sentinel='a';
+            var i=0;
+            var bandera=true;
+            while(bandera && i<a_paterno.length){
+                switch(a_paterno.charAt(i)){
+                    case 'A': sentinel='a';bandera=false;break;
+                    case 'E': sentinel='e';bandera=false;break;
+                    case 'I': sentinel='i';bandera=false;break;
+                    case 'O': sentinel='o';bandera=false;break;
+                    case 'U': sentinel='u';bandera=false;break;
+                    default: break;
+                }
+                i++;
+            }
+            return sentinel;
+        }
+    </script>
+</body>
+</html>

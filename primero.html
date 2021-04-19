@@ -1,0 +1,133 @@
+<html>
+<head>
+    <title>Programacion web</title>
+</head>
+<link rel="stylesheet" href="css/primero.css">
+<link rel="stylesheet" href="css/rejoj.css">
+<body>
+    <header>
+        <center>
+            <table>
+                <tr align="center">
+                    <td>
+                        <a href="www.tecnm.mx"><img src="img/logo_TNM.png" width=150px></a>
+                    </td>
+                    <td>
+                        <h1>Instituto tecnológico de tehuacan</h1>
+                        <h2>Ing. en Sistemas Computacionales</h2>
+                        <h3>Programación Web</h3>
+                    </td>
+                </tr>
+            </table>
+             
+        </center>
+    </header>
+    <nav>
+        <button class="menu-boton" onclick="desplegar()">&#9776;</button>
+        <h2>Bienvenidos a mi primera página web</h2>
+        <hr>
+    </nav>
+    <section class="menu-desplegable">
+        <ul>
+            <li><a href="#reloj_digital">Reloj</a></li>
+            <li><a href="#">Vacio</a></li>
+            <li><a href="#">Vacio</a></li>
+            <li><a href="#">Vacio</a></li>
+            <li><a href="#">Vacio</a></li>
+            <li><a href="#">Vacio</a></li>
+        </ul>
+    </section>
+    <section class="informacion">
+        
+    <p>Saludos. El contenido de esta página esta relacionada conla materia de <b>Programación Web</b> del <u>Instituto Tecnologico de tehuacan</u>, que forma parte de los institutos pertenecientes al <i><b>Tecnologico Nacional de Mexico</b></i>.
+    </p>
+    <ol type="1">
+        <lh><font size="4" color="red">Carreras del tecnológico:</font></lh>
+        <li>Ingenieria en sistemas computacionales.
+        <li>Ingenieria Civil
+        <li>Ingenieria Bioquimica
+        <li>Ingenieria mecatronica
+        <li>Ingenieria Biomedica
+        <li>Ingenieria industrial
+        <li>Licenciatura en administración
+        <li>Contador publico
+    </ol>
+    <p>
+    Los integrantes del equipo de trabajo son:
+    </p>
+    <center>
+    <table border="1">
+        <tr>
+            <th>NC</th>
+            <th>Nombre</th>
+            <th>Especilidad</th>
+            <th>Semestre</th>
+        </tr>
+        <tr>
+            <td>18361101</td>
+            <td>Luis Serapio Martinez Garcia</td>
+            <td>Sistemas Computacionales</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>17362001</td>
+            <td>Miriam Martinez Garcia</td>
+            <td>IB</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>01360101</td>
+            <td>Maria Velez Reyes</td>
+            <td>ISC</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>01362598</td>
+            <td>Belem de Anda Pérez</td>
+            <td>II</td>
+            <td>5</td>
+        </tr>
+    </table>
+    </center>
+    <a href="http://www.ittehuacan.edu.mx">Ir a la pagina de ITTehuacan</a><br>
+    <a href="formulario.html">Ir al la pagina de formulario</a>
+    <div class="reloj_digital" id="reloj_digital">
+        <div class="fecha">
+            <p class="linea_fecha">
+                <span class="dia_semana"></span>
+                <span> </span>
+                <span class="dia"></span>
+                <span> de </span>
+                <span class="mes"></span>
+                <span> de </span>
+                <span class="year"></span>
+            </p>
+        </div>
+        <div class="hora_completa">
+            <p class="linea_hora">
+                <span class="hora"></span>
+                :
+                <span class="minuto"></span>
+                :
+            </p>
+            <div class="linea_segundos">
+                <p class="segundo"></p>
+                <p class="ampm"></p>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    
+    <script src="js/reloj_digital.js"></script>
+    <script>
+        var bandera=true;
+        var menu_desplegable = document.querySelector('.menu-desplegable');
+        function desplegar(){
+            (bandera)?menu_desplegable.setAttribute('style','display:inline-block'):
+            menu_desplegable.setAttribute('style','display:none');
+            bandera=!bandera;
+        }
+    </script>
+</body>
+</html>

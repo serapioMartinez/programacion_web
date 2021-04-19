@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación formula general</title>
+    <style>
+        section{
+            margin: 0 auto;
+            border: 1px solid black;
+            box-shadow: black 0px 0px 5px;
+            text-align: center;
+            width: 80%;
+            
+        }
+        p{
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>
+            Aplicación de la formula general
+        </h1>
+        <p>Para poder usar el programa debe ingresar los datos a,b y c que se encuentran en su funcion de tipo ax^2+bx+c=0</p>
+        <div class="form">
+            <label for="dato_a">A:</label>
+            <input type="text" id="dato_a"><br>
+            <label for="dato_b">B:</label>
+            <input type="text" id="dato_b"><br>
+            <label for="dato_c">C:</label>
+            <input type="text" id="dato_c"><br>
+            <input type="submit" value="Calcular" class="botonCalcular">
+        </div>
+        <div class="result">
+            <span class="resultadoOperacion"></span>
+        </div>
+    </section>
+    <script>
+        var datos=document.querySelectorAll('input');
+        var botonCalcular = document.querySelector('.botonCalcular');
+        var linea_resultado = document.querySelector('.resultadoOperacion');
+        datos[0].focus();
+        botonCalcular.addEventListener('click',aplicarOperacion);
+        function aplicarOperacion(){
+            if(checkData()){
+                var a =parseInt(datos[0].value);
+                var b =parseInt(datos[1].value);
+                var c =parseInt(datos[2].value);
+                var raiz = Math.sqrt(Math.pow(b,2)-4*a*c);
+                if(isNaN(raiz)){
+                    linea_resultado.textContent="Se trata de numeros imaginarios";
+                }else{
+                    var x1=(-b+raiz)/(2*a);
+                    var x2=(-b-raiz)/(2*a);
+                    linea_resultado.textContent=" x1="+x1+"  x2="+x2;
+                }
+                
+            }else{
+                linea_resultado.textContent="Por favor llene los datos completamente";
+            }
+        }
+        function checkData(){
+            var bandera=true;
+            for(var i=0;i<datos.length-1;i++){
+                if(datos[i].value=="" || isNaN(parseInt(datos[i].value))) {
+                    bandera=false;
+                }
+            }
+            return bandera;
+        }
+    </script>
+     
+    
+</body>
+</html>
